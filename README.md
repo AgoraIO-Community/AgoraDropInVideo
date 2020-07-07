@@ -7,3 +7,5 @@ This project uses Cocoapods. After cloning this repository, run `pod install` to
 
 You will also need an Agora App ID, obtainable from the [Agora Developer Console](https://console.agora.io).
 
+This application is meant as a supplementary reference for the tutorial found [here](https://bit.ly/2BN4qY1).
+
