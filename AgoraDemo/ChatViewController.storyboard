@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="26C-iL-4bm">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Chat View Controller-->
+        <scene sceneID="KMy-og-JeG">
+            <objects>
+                <viewController id="26C-iL-4bm" customClass="ChatViewController" customModule="AgoraDemo" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="MWM-Dh-GqR">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Lfa-re-2Vh">
+                                <rect key="frame" x="20" y="808" width="374" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="26C-iL-4bm" id="26N-X1-zaf"/>
+                                </connections>
+                            </textField>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="kJ4-2I-kF4">
+                                <rect key="frame" x="0.0" y="44" width="414" height="744"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="chatCell" rowHeight="89" id="Yhj-CS-cLh" customClass="ChatTableViewCell" customModule="AgoraDemo" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="414" height="89"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Yhj-CS-cLh" id="vZz-VY-uuy">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="89"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MRh-xC-2Ao">
+                                                    <rect key="frame" x="30" y="21" width="354" height="47"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="MRh-xC-2Ao" firstAttribute="leading" secondItem="vZz-VY-uuy" secondAttribute="leadingMargin" constant="10" id="Bg9-oL-KCA"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="MRh-xC-2Ao" secondAttribute="bottom" constant="10" id="QMk-oF-QEU"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="MRh-xC-2Ao" secondAttribute="trailing" constant="10" id="S5H-yj-NaF"/>
+                                                <constraint firstItem="MRh-xC-2Ao" firstAttribute="top" secondItem="vZz-VY-uuy" secondAttribute="topMargin" constant="10" id="nMG-Gn-Tti"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="messageLabel" destination="MRh-xC-2Ao" id="pJG-jC-1Q9"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="26C-iL-4bm" id="er5-9B-a4i"/>
+                                    <outlet property="delegate" destination="26C-iL-4bm" id="W3e-Mf-ym3"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="VOD-Vk-sQT" firstAttribute="trailing" secondItem="Lfa-re-2Vh" secondAttribute="trailing" constant="20" id="2Pq-2b-gHo"/>
+                            <constraint firstItem="kJ4-2I-kF4" firstAttribute="leading" secondItem="VOD-Vk-sQT" secondAttribute="leading" id="CYA-pD-nd7"/>
+                            <constraint firstItem="Lfa-re-2Vh" firstAttribute="top" secondItem="kJ4-2I-kF4" secondAttribute="bottom" constant="20" id="GAs-yp-9MK"/>
+                            <constraint firstItem="Lfa-re-2Vh" firstAttribute="leading" secondItem="VOD-Vk-sQT" secondAttribute="leading" constant="20" id="XBn-3j-Ifl"/>
+                            <constraint firstItem="VOD-Vk-sQT" firstAttribute="bottom" secondItem="Lfa-re-2Vh" secondAttribute="bottom" constant="20" id="ezH-cw-8Ra"/>
+                            <constraint firstItem="VOD-Vk-sQT" firstAttribute="trailing" secondItem="kJ4-2I-kF4" secondAttribute="trailing" id="gvD-x7-s8R"/>
+                            <constraint firstItem="kJ4-2I-kF4" firstAttribute="top" secondItem="VOD-Vk-sQT" secondAttribute="top" id="lzf-Xd-1md"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="VOD-Vk-sQT"/>
+                    </view>
+                    <connections>
+                        <outlet property="bottomConstraint" destination="ezH-cw-8Ra" id="Ku3-x1-fDl"/>
+                        <outlet property="tableView" destination="kJ4-2I-kF4" id="whT-8h-ttV"/>
+                        <outlet property="textField" destination="Lfa-re-2Vh" id="NNI-YK-rzy"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Uii-KK-Nt9" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="31.884057971014496" y="63.616071428571423"/>
+        </scene>
+    </scenes>
+</document>

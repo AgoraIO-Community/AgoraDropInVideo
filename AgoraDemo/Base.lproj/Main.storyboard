@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="6pD-bP-93d">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="collection view cell content view" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Navigation Controller-->
+        <scene sceneID="lTo-iz-2Fz">
+            <objects>
+                <navigationController navigationBarHidden="YES" id="6pD-bP-93d" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Mxw-Kd-tR5">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="cXO-Cb-szT"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="LjT-J3-H88" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-2126" y="-185"/>
+        </scene>
+        <!--Agora Video View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="AgoraVideoViewController" customModule="AgoraDemo" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" contentInsetAdjustmentBehavior="never" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="p43-dy-0y8">
+                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="TfR-8J-N2u">
+                                    <size key="itemSize" width="416" height="818"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="videoCell" id="fXV-uG-GCf" customClass="VideoCollectionViewCell" customModule="AgoraDemo" customModuleProvider="target">
+                                        <rect key="frame" x="-1" y="0.0" width="416" height="818"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="JUF-e6-gVO">
+                                            <rect key="frame" x="0.0" y="0.0" width="416" height="818"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KaB-6u-rzo">
+                                                    <rect key="frame" x="0.0" y="0.0" width="416" height="818"/>
+                                                </view>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="KaB-6u-rzo" firstAttribute="top" secondItem="JUF-e6-gVO" secondAttribute="top" id="DVZ-0C-6MU"/>
+                                                <constraint firstAttribute="bottom" secondItem="KaB-6u-rzo" secondAttribute="bottom" id="WIg-ma-mIr"/>
+                                                <constraint firstItem="KaB-6u-rzo" firstAttribute="leading" secondItem="JUF-e6-gVO" secondAttribute="leading" id="aJh-Sk-4KF"/>
+                                                <constraint firstAttribute="trailing" secondItem="KaB-6u-rzo" secondAttribute="trailing" id="cEx-3w-CjJ"/>
+                                            </constraints>
+                                        </collectionViewCellContentView>
+                                        <connections>
+                                            <outlet property="videoView" destination="KaB-6u-rzo" id="wR2-sL-MdE"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                </cells>
+                                <connections>
+                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="gzg-9h-5ws"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="cmW-x6-WCM"/>
+                                </connections>
+                            </collectionView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uA6-Tm-XG3">
+                                <rect key="frame" x="0.0" y="782" width="414" height="80"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="k2z-aM-uR4">
+                                        <rect key="frame" x="99" y="0.0" width="216" height="80"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kFV-TX-9Lk">
+                                                <rect key="frame" x="0.0" y="0.0" width="54" height="80"/>
+                                                <state key="normal" title="Camera"/>
+                                                <connections>
+                                                    <action selector="didTapSwitchCamera:" destination="BYZ-38-t0r" eventType="touchUpInside" id="lly-2i-Upd"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rEq-TP-oVN">
+                                                <rect key="frame" x="54" y="0.0" width="54" height="80"/>
+                                                <state key="normal" title="Lock"/>
+                                                <connections>
+                                                    <action selector="didTapX:" destination="BYZ-38-t0r" eventType="touchUpInside" id="VZe-lW-UGS"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="C1V-F9-20M">
+                                                <rect key="frame" x="108" y="0.0" width="54" height="80"/>
+                                                <state key="normal" title="Mute"/>
+                                                <connections>
+                                                    <action selector="didToggleMute:" destination="BYZ-38-t0r" eventType="touchUpInside" id="cnx-KC-KAs"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fKH-jm-rNV">
+                                                <rect key="frame" x="162" y="0.0" width="54" height="80"/>
+                                                <state key="normal" title="Chat"/>
+                                                <connections>
+                                                    <action selector="didTapChat:" destination="BYZ-38-t0r" eventType="touchUpInside" id="mh2-IR-5oP"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="k2z-aM-uR4" firstAttribute="centerX" secondItem="uA6-Tm-XG3" secondAttribute="centerX" id="2wl-UL-rJh"/>
+                                    <constraint firstAttribute="height" constant="80" id="f7M-do-vPb"/>
+                                    <constraint firstItem="k2z-aM-uR4" firstAttribute="top" secondItem="uA6-Tm-XG3" secondAttribute="top" id="tgD-ei-8Jy"/>
+                                    <constraint firstAttribute="bottom" secondItem="k2z-aM-uR4" secondAttribute="bottom" id="uCv-aS-K6u"/>
+                                </constraints>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yUK-h0-toL">
+                                <rect key="frame" x="359" y="59" width="40" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="RY1-wb-vgo"/>
+                                    <constraint firstAttribute="width" constant="40" id="ZE9-kV-L13"/>
+                                </constraints>
+                                <state key="normal" title="Button" image="plus"/>
+                                <connections>
+                                    <action selector="didTapInvite:" destination="BYZ-38-t0r" eventType="touchUpInside" id="atu-60-MyL"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9hm-OP-ySJ">
+                                <rect key="frame" x="15" y="59" width="40" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="40" id="Xv5-eZ-g7j"/>
+                                    <constraint firstAttribute="height" constant="40" id="Y6j-9e-bPR"/>
+                                </constraints>
+                                <state key="normal" title="Button" image="smile"/>
+                                <connections>
+                                    <action selector="didTapAddFriend:" destination="BYZ-38-t0r" eventType="touchUpInside" id="wZi-SN-rbx"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="uA6-Tm-XG3" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="2lN-zB-ExN"/>
+                            <constraint firstItem="yUK-h0-toL" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="15" id="3L6-ob-xfh"/>
+                            <constraint firstItem="p43-dy-0y8" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="Bhh-s4-iaw"/>
+                            <constraint firstItem="p43-dy-0y8" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="CtR-vH-cNH"/>
+                            <constraint firstItem="9hm-OP-ySJ" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="15" id="HsX-gY-zpP"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="yUK-h0-toL" secondAttribute="trailing" constant="15" id="VdM-3N-FHN"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="uA6-Tm-XG3" secondAttribute="trailing" id="es9-R1-tcQ"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="uA6-Tm-XG3" secondAttribute="bottom" id="kGE-Vy-An1"/>
+                            <constraint firstItem="9hm-OP-ySJ" firstAttribute="top" secondItem="yUK-h0-toL" secondAttribute="top" id="pG2-ps-tA6"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="p43-dy-0y8" secondAttribute="trailing" id="s9s-zK-WfI"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="p43-dy-0y8" secondAttribute="bottom" id="zPV-bo-OBx"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="otT-2U-dOH"/>
+                    <connections>
+                        <outlet property="addFriendButton" destination="9hm-OP-ySJ" id="EhC-IO-Z3G"/>
+                        <outlet property="chatButton" destination="fKH-jm-rNV" id="Qrg-f2-OwY"/>
+                        <outlet property="collectionView" destination="p43-dy-0y8" id="Dvp-EP-yAm"/>
+                        <outlet property="inviteFriendButton" destination="yUK-h0-toL" id="qIN-nf-NFp"/>
+                        <outlet property="lockButton" destination="rEq-TP-oVN" id="q77-X5-99z"/>
+                        <outlet property="muteButton" destination="C1V-F9-20M" id="jZ1-7U-2eo"/>
+                        <outlet property="switchCameraButton" destination="kFV-TX-9Lk" id="ce3-zR-dix"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1171.0144927536232" y="-185.49107142857142"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="plus" width="512" height="512"/>
+        <image name="smile" width="512" height="512"/>
+    </resources>
+</document>
